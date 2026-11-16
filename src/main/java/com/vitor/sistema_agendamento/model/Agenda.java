@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "agenda")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,11 +19,11 @@ public class Agenda {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "client_id")
-    private Cliente cliente;
+    private Client cliente;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "professional_id")
-    private Profissional profissional;
+    private Professional profissional;
 
     private LocalDateTime datetime;
 
