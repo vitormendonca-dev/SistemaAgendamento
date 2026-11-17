@@ -12,18 +12,18 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Agenda {
+public class AgendaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "client_id")
-    private Client cliente;
+    private ClientModel cliente;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "professional_id")
-    private Professional profissional;
+    @JoinColumn(name = "profissional_id")
+    private ProfissionalModel profissional;
 
     private LocalDateTime datetime;
 
